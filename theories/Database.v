@@ -73,6 +73,13 @@ Proof.
 Qed.
 
 Elpi Db logic.db lp:{{
+  kind type-variance type.
+  type covariant type-variance.
+  type contravariant type-variance.
+
+  type logical-connector term -> term -> list type-variance -> term -> term -> term -> prop.
+}}.
+Elpi Accumulate logic.db lp:{{
   logical-connector
     {{ and }} {{ andb }} [covariant, covariant]
     {{ and_impl_morphism }} {{ andb_and_impl }} {{ and_andb_impl }}.
